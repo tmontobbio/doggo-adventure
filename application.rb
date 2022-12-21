@@ -7,53 +7,55 @@ RUN_SPEED = 3
 
 ###############################  MENU ###############################
 
-class MainMenu
-  def initialize
-    title_text = Text.new(
-        'Doggo Adventure!',
-        y: 100,
-        size: 72,
-        )
-        title_text.x = (Window.width - title_text.width) / 2
+# class MainMenu
+#   def initialize
+#     title_text = Text.new(
+#         'Doggo Adventure!',
+#         y: 100,
+#         size: 72,
+#         )
+#         title_text.x = (Window.width - title_text.width) / 2
         
 
-    play_text = Text.new(
-    'PLAY',
-     y: 400,
-    size: 50,
-    )
-    play_text.x = (Window.width - play_text.width) / 2
+#     play_text = Text.new(
+#     'PLAY',
+#      y: 400,
+#     size: 50,
+#     )
+#     play_text.x = (Window.width - play_text.width) / 2
 
-    about_text = Text.new(
-    'About',
-     y: 470,
-    size: 40,
-    )
-    about_text.x = (Window.width - about_text.width) / 2
+#     about_text = Text.new(
+#     'About',
+#      y: 470,
+#     size: 40,
+#     )
+#     about_text.x = (Window.width - about_text.width) / 2
     
-  end
-end
+#   end
+# end
 
-menu = MainMenu.new
-menu_music = Music.new("assets/audio/menu-music.mp3")
-menu_music.play
-menu_music.loop = true
+# menu = MainMenu.new
+# menu_music = Music.new("assets/audio/menu-music.mp3")
+# menu_music.play
+# menu_music.loop = true
 
-on :key_down do |event|
-    case event.key
-        when 'x'
-        menu_music.stop
-        # Find way to remove menu and start game. 
-    end
-  end
+# on :key_down do |event|
+#     case event.key
+#         when 'x'
+#         menu_music.stop
+#         # Find way to remove menu and start game. 
+#     end
+#   end
 
 ###############################  GAME ###############################
 
-class Game
-  def initialize
+# class Game
+#   def initialize
 
   @score = 0
   game_music = Music.new("assets/audio/game-music.mp3")
+
+        score = Text.new("Score: #{@score}")
 
         sky = Image.new(
             'assets/background/layer-1-sky.png',
@@ -134,7 +136,9 @@ class Game
         @score += 1
     end
 
-  end
-end
+    game_music.play
+
+#   end
+# end
 
 show
